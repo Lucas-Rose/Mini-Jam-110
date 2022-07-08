@@ -11,15 +11,14 @@ public class sheepai : MonoBehaviour
     [SerializeField]
     float maxDistance;
     Vector2 marker;
+    public Vector2 spawn;
 
-    Animator anim;
     SpriteRenderer sr;
     public SpriteRenderer shadow;
     // Start is called before the first frame update
     void Start()
     {
         SetNewDestination();
-        anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -35,7 +34,7 @@ public class sheepai : MonoBehaviour
     }
     void SetNewDestination()
     {
-        marker = new Vector2(Random.Range( -maxDistance, maxDistance), Random.Range(-maxDistance, maxDistance));
+        marker = new Vector2(spawn.x + Random.Range( -maxDistance, maxDistance), spawn.y + Random.Range(-maxDistance, maxDistance));
     }
 
     void flip()
