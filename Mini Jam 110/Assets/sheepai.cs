@@ -21,7 +21,10 @@ public class sheepai : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, marker, speed * Time.deltaTime);
-      //  if (Vector2.Distance)
+        if (Vector2.Distance(transform.position, marker) < range)
+        {
+            SetNewDestination();
+        }
     }
     void SetNewDestination()
     {
