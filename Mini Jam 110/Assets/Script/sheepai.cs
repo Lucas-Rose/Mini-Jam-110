@@ -11,13 +11,15 @@ public class sheepai : MonoBehaviour
     [SerializeField]
     float maxDistance;
     Vector2 marker;
-    public Vector2 spawn;
+    Vector2 spawn;
 
     SpriteRenderer sr;
     public SpriteRenderer shadow;
     // Start is called before the first frame update
     void Start()
     {
+        spawn.x = transform.position.x;
+        spawn.y = transform.position.y;
         SetNewDestination();
         sr = GetComponent<SpriteRenderer>();
     }
@@ -47,6 +49,5 @@ public class sheepai : MonoBehaviour
         }
         sr.flipX = true;
         shadow.flipX = true;
-
     }
 }

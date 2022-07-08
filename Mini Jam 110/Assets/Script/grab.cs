@@ -1,0 +1,66 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class grab : MonoBehaviour
+{
+    public Collider2D trigCol;
+    public Collider2D hardCol;
+    sheepai brain;
+    public Movement sethMove;
+
+
+    public GameObject seth;
+    public GameObject capture;
+    public GameObject pen;
+
+    public Animator anim;
+    public bool held;
+    public bool saved;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        brain = GetComponent<sheepai>();
+        pen = GameObject.Find("pen");
+        capture = GameObject.Find("capture");
+        seth = GameObject.Find("Seth");
+        sethMove = seth.GetComponent<Movement>();
+    }
+    // Update is called once per 
+    private void Update()
+    {
+        if (saved)
+        {
+            if (Vector2.Distance(gameObject.transform.position, capture.transform.position) < 5)
+            {
+                held = false;
+                sethMove.holding = false;
+                Destroy(trigCol);
+                Destroy(hardCol);
+                anim.SetTrigger("Fade");
+            }
+            if (held)
+            {
+                transform.position = Vector3.Lerp(transform.position, seth.transform.position, 0.5f * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, pen.transform.position, 0.5f * Time.deltaTime);
+            }
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "seth" && sethMove.holding == false)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Destroy(brain);
+                held = true;
+                sethMove.holding = true;
+                saved = true;
+            }
+        }
+    }
+}

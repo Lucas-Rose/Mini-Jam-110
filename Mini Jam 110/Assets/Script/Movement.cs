@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour {
     public float sprintSpeed = 1f;
     public SpriteRenderer sr;
     public bool shadow;
+    public bool holding;
 
     // Start is called before the first frame update
     void Start()
