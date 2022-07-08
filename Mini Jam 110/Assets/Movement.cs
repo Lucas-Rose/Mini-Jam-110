@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour {
     Rigidbody2D rb;
     public float speed;
     Animator anim;
-    public Vector3 playerScale;
+    public Vector2 playerScale;
     public bool canMove;
     public float sprintSpeed = 1f;
     public SpriteRenderer sr;
