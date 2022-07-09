@@ -173,6 +173,7 @@ MonoBehaviour:
   anim: {fileID: 5162475614523560685}
   held: 0
   saved: 0
+  shadow: {fileID: 5162475615709459761}
 --- !u!61 &1021532222548609726
 BoxCollider2D:
   m_ObjectHideFlags: 0

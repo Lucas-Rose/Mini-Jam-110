@@ -17,6 +17,8 @@ public class grab : MonoBehaviour
     public Animator anim;
     public bool held;
     public bool saved;
+    SpriteRenderer sr;
+    public SpriteRenderer shadow;
 
     // Start is called before the first frame update
     private void Start()
@@ -26,12 +28,14 @@ public class grab : MonoBehaviour
         capture = GameObject.Find("capture");
         seth = GameObject.Find("Seth");
         sethMove = seth.GetComponent<Movement>();
+        sr = GetComponent<SpriteRenderer>();
     }
     // Update is called once per 
     private void Update()
     {
         if (saved)
         {
+            flip();
             if (Vector2.Distance(gameObject.transform.position, capture.transform.position) < 5)
             {
                 held = false;
@@ -49,6 +53,21 @@ public class grab : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, pen.transform.position, 0.5f * Time.deltaTime);
             }
         }
+    }
+    void flip()
+    {
+        if(transform.position.x < seth.transform.position.x)
+        {
+            sr.flipX = false;
+            shadow.flipX = false;
+            return;
+        }
+        sr.flipX = true;
+        shadow.flipX = true;
+    }
+    public void kill()
+    {
+        Destroy(this.gameObject);
     }
     private void OnTriggerStay2D(Collider2D other)
     {

@@ -254,9 +254,10 @@ MonoBehaviour:
   seth: {fileID: 0}
   capture: {fileID: 0}
   pen: {fileID: 0}
-  anim: {fileID: 0}
+  anim: {fileID: 2212102394763072957}
   held: 0
   saved: 0
+  shadow: {fileID: 2212102394594937688}
 --- !u!61 &3418248857940604325
 BoxCollider2D:
   m_ObjectHideFlags: 0

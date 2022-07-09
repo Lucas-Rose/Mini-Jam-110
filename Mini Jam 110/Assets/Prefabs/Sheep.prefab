@@ -199,6 +199,7 @@ MonoBehaviour:
   anim: {fileID: 2172756681541583301}
   held: 0
   saved: 0
+  shadow: {fileID: 2172756682137101544}
 --- !u!1 &2172756682137101547
 GameObject:
   m_ObjectHideFlags: 0
