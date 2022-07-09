@@ -46,11 +46,11 @@ public class grab : MonoBehaviour
             }
             if (held)
             {
-                transform.position = Vector3.Lerp(transform.position, seth.transform.position, 0.5f * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, seth.transform.position, 0.75f * Time.deltaTime);
             }
             else
             {
-                transform.position = Vector3.Lerp(transform.position, pen.transform.position, 0.5f * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, pen.transform.position, 0.75f * Time.deltaTime);
             }
         }
     }
