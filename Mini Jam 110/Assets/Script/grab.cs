@@ -79,6 +79,7 @@ public class grab : MonoBehaviour
                 held = true;
                 sethMove.holding = true;
                 saved = true;
+                scorecount.scoreValue += 1;
             }
         }
     }
