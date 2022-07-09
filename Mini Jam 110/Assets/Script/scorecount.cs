@@ -7,7 +7,7 @@ using System;
 
 public class scorecount : MonoBehaviour
 {
-    public static int scoreValue = 0;
+    public int scoreValue = 0;
     public TMP_Text score;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,11 @@ public class scorecount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "laud herded: " + scoreValue;
+        score.text = "Offerings: " + scoreValue;
+    }
+
+    public void increase(int val)
+    {
+        scoreValue += val; 
     }
 }

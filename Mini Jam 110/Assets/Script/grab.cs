@@ -14,6 +14,10 @@ public class grab : MonoBehaviour
     public GameObject capture;
     public GameObject pen;
 
+    scorecount sc;
+    public GameObject score;
+    public int value;
+
     public Animator anim;
     public bool held;
     public bool saved;
@@ -29,6 +33,8 @@ public class grab : MonoBehaviour
         seth = GameObject.Find("Seth");
         sethMove = seth.GetComponent<Movement>();
         sr = GetComponent<SpriteRenderer>();
+        score = GameObject.Find("Score");
+        sc = score.GetComponent<scorecount>();
     }
     // Update is called once per 
     private void Update()
@@ -67,6 +73,7 @@ public class grab : MonoBehaviour
     }
     public void kill()
     {
+        sc.increase(value);
         Destroy(this.gameObject);
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -79,7 +86,6 @@ public class grab : MonoBehaviour
                 held = true;
                 sethMove.holding = true;
                 saved = true;
-                scorecount.scoreValue += 1;
             }
         }
     }
