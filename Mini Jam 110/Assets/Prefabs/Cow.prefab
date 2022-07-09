@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86aad8d1dbded2d489f72f4b1e0d8a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.75
   range: 10
   maxDistance: 10
   shadow: {fileID: 5162475615709459761}
@@ -172,6 +172,7 @@ MonoBehaviour:
   pen: {fileID: 0}
   score: {fileID: 0}
   value: 1
+  speed: 0
   anim: {fileID: 5162475614523560685}
   held: 0
   saved: 0

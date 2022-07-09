@@ -254,6 +254,8 @@ MonoBehaviour:
   seth: {fileID: 0}
   capture: {fileID: 0}
   pen: {fileID: 0}
+  score: {fileID: 0}
+  value: 3
   anim: {fileID: 2212102394763072957}
   held: 0
   saved: 0
