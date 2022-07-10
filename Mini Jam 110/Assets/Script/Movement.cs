@@ -14,6 +14,11 @@ public class Movement : MonoBehaviour {
     public SpriteRenderer Shadow;
     public bool shadow;
     public bool holding;
+    Collider2D col;
+    public int health;
+
+
+    float hitCD = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +26,7 @@ public class Movement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        col = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -45,6 +51,7 @@ public class Movement : MonoBehaviour {
         }
         movePlayer();
         flip();
+        hitCD -= Time.deltaTime;
     }
 
     public void movePlayer()
@@ -76,6 +83,18 @@ public class Movement : MonoBehaviour {
             {
                 sr.flipX = false;
                 Shadow.flipX = false;
+            }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (hitCD < 0)
+        {
+            if (collision.gameObject.tag == "enemy")
+            {
+                health -= 1;
+                anim.SetTrigger("hit");
+                hitCD = 3F;
             }
         }
     }

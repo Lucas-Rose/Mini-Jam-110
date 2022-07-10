@@ -6,10 +6,14 @@ public class gunManager : MonoBehaviour
 {
     public ParticleSystem ps;
     public GameObject parSys;
+    SpriteRenderer sr;
+    public GameObject rightBullet;
+    public GameObject leftBullet;
+    public GameObject[] bulletSpots;
     // Start is called before the first frame update
     void Start()
     {
-        ps = GetComponent<ParticleSystem>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -23,6 +27,14 @@ public class gunManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if(sr.flipX == false)
+            {
+                Instantiate(rightBullet, bulletSpots[1].transform);
+            }
+            if (sr.flipX == true)
+            {
+                Instantiate(leftBullet, bulletSpots[0].transform);
+            }
             ps.Play();
         }
     }
