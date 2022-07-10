@@ -991,8 +991,11 @@ MonoBehaviour:
   canMove: 0
   sprintSpeed: 1
   sr: {fileID: 0}
+  Shadow: {fileID: 0}
   shadow: 1
   holding: 0
+  health: 0
+  sc: {fileID: 0}
 --- !u!212 &748005007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1332,6 +1335,7 @@ GameObject:
   - component: {fileID: 1012853124}
   - component: {fileID: 1012853126}
   - component: {fileID: 1012853125}
+  - component: {fileID: 1012853127}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1456,6 +1460,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012853123}
   m_CullTransparentMesh: 1
+--- !u!114 &1012853127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012853123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff97324c29ab6b4ab651ce8f4e9a7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1012853125}
 --- !u!1 &1035104045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1654,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreValue: 0
   score: {fileID: 1078589713}
+  nonZero: 0
+  display: ' Sacrificed: '
 --- !u!1 &1098694081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,8 +2338,11 @@ MonoBehaviour:
   canMove: 1
   sprintSpeed: 1
   sr: {fileID: 0}
+  Shadow: {fileID: 748005007}
   shadow: 0
   holding: 0
+  health: 0
+  sc: {fileID: 0}
 --- !u!212 &1531652201
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7561,6 +7583,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   parSys: {fileID: 1793531881}
+  rightBullet: {fileID: 0}
+  leftBullet: {fileID: 0}
+  bulletSpots: []
 --- !u!1 &1820947024
 GameObject:
   m_ObjectHideFlags: 0

@@ -1697,7 +1697,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1316800552}
         m_TargetAssemblyTypeName: buttonManager, Assembly-CSharp
-        m_MethodName: loadNext
+        m_MethodName: retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

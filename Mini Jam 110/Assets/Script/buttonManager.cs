@@ -25,4 +25,22 @@ public class buttonManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void nextDay()
+    {
+        SceneManager.LoadScene(2);
+        PlayerPrefs.SetInt("day", PlayerPrefs.GetInt("day") + 1);
+    }
+    public void loadMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void loadFail()
+    {
+        SceneManager.LoadScene(4);
+    }
+    public void retry()
+    {
+        SceneManager.LoadScene(2);
+        PlayerPrefs.SetInt("day", 1);
+    }
 }

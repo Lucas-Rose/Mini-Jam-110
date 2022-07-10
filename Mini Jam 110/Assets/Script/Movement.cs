@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour {
     public bool holding;
     Collider2D col;
     public int health;
+    public scorecount sc;
 
 
     float hitCD = 3f;
@@ -92,9 +93,9 @@ public class Movement : MonoBehaviour {
         {
             if (collision.gameObject.tag == "enemy")
             {
-                health -= 1;
+                sc.scoreValue -= 1;
                 anim.SetTrigger("hit");
-                hitCD = 3F;
+                hitCD = 2F;
             }
         }
     }

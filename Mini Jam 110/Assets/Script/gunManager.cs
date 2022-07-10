@@ -25,7 +25,7 @@ public class gunManager : MonoBehaviour
 
     public void shoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if(sr.flipX == false)
             {

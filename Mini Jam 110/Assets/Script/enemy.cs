@@ -10,6 +10,8 @@ public class enemy : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
     Animator anim;
+    GameObject devilCount;
+    scorecount dCount;
 
     public int health;
     // Start is called before the first frame update
@@ -19,6 +21,9 @@ public class enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        Seth = GameObject.Find("battleSeth");
+        devilCount = GameObject.Find("devilCount");
+        dCount = devilCount.GetComponent<scorecount>();
     }
 
     // Update is called once per frame
@@ -27,7 +32,11 @@ public class enemy : MonoBehaviour
         
         transform.position = Vector2.Lerp(transform.position, Seth.transform.position, 0.5f * Time.deltaTime);
         flip();
-
+        if(health <= 0)
+        {
+            dCount.decrease(1);
+            Destroy(gameObject);
+        }
     }
     public void flip()
     {
