@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour {
     public bool canMove;
     public float sprintSpeed = 1f;
     public SpriteRenderer sr;
+    public SpriteRenderer Shadow;
     public bool shadow;
     public bool holding;
 
@@ -69,10 +70,12 @@ public class Movement : MonoBehaviour {
             if(Input.GetAxisRaw("Horizontal") < 0)
             {
                 sr.flipX = true;
+                Shadow.flipX = true;
             }
             if (Input.GetAxisRaw("Horizontal") > 0)
             {
                 sr.flipX = false;
+                Shadow.flipX = false;
             }
         }
     }
